@@ -1,0 +1,57 @@
+\documentclass[ebook,12pt,oneside,openany]{memoir}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage{url}
+
+% for placeholder text
+\usepackage{lipsum}
+
+\title{Taller 1}
+\author{Cristian Padilla, Triana Ramirez, Manuel Rodriguez}
+
+\begin{document}
+\maketitle
+\setlength{\parindent}{0pt}
+Los datos provienen de muchas fuentes: mediciones de sensores, eventos, texto, imágenes y videos. El \verb||Internet de las cosas (IoT) está arrojando flujos de \verb información. Gran parte de estos datos no están \verb||estructurados: las imágenes son una colección de píxeles, y cada píxel contiene RGB
+(rojo, verde, azul) información de color.\\ Los textos son secuencias de palabras y caracteres que no son palabras, a menudo organizados por secciones, subsecciones, etc. Los flujos de clics son secuencias de acciones realizadas por un usuario que interactúa con una aplicación o una página web. De hecho, un gran desafío de la ciencia de datos es convertir este torrente de datos sin procesar en información procesable.\\ Para aplicar los conceptos estadísticos que se tratan en este libro, los datos brutos no estructurados
+deben ser procesados y manipulados en una forma estructurada. Una de las formas más comunes de datos estructurados es una tabla con filas y columnas, ya que los datos pueden surgir de una base de datos relacional o recopilarse para un estudio.
+Hay dos tipos básicos de datos estructurados: numéricos y categóricos. Los datos numéricos se presentan en dos formas: continuos, como la velocidad del viento o la duración del tiempo, y discretos, como el recuento de la ocurrencia de un evento. Los datos categóricos toman solo un conjunto fijo
+de valores, como un tipo de pantalla de TV (plasma, LCD, LED, etc.) o el nombre de un estado (Alabama, Alaska, etc.).\\ Los datos binarios son un caso especial importante de datos categóricos que toman solo uno de dos valores, como 0/1, sí/no o verdadero/falso. Otro tipo útil de datos categóricos son los datos ordinales en los que se ordenan las categorías; un ejemplo de esto es una calificación numérica (1, 2, 3, 4 o 5).\\
+¿Por qué nos molestamos con la taxonomía de tipos de datos? Resulta que a los efectos del análisis de datos y el modelado predictivo, el tipo de datos es importante para ayudar a determinar el tipo de visualización, análisis de datos o modelo estadístico. De hecho, los software de ciencia de datos, como R y Python, utilizan estos tipos de datos para mejorar el rendimiento computacional. \\Más importante aún, el tipo de datos para una variable determina cómo el software manejará los cálculos para esa variable.
+Términos clave para tipos de datos
+
+\setlength{\parindent}{0pt}\textbf{Numérico:}\\
+Datos que se expresan en una escala numérica.\\
+\setlength{\parindent}{0pt}\textbf{Continuo:}\\
+Datos que pueden tomar cualquier valor en un intervalo. (Sinónimos: intervalo, flotante, numérico)
+
+\setlength{\parindent}{0pt}\textbf{Discreto:}\\
+Datos que solo pueden tomar valores enteros, como recuentos. (Sinónimos: número entero, cuenta)
+
+\setlength{\parindent}{0pt}\textbf{Categórico:}\\
+Datos que pueden tomar solo un conjunto específico de valores que representan un conjunto de categorías posibles. (Sinónimos: enumeraciones, enumerado, factores, nominal)
+
+\setlength{\parindent}{0pt}\textbf{Binario:}\\
+Un caso especial de datos categóricos con solo dos categorías de valores, por ejemplo, 0/1, verdadero/falso. (Sinónimos: dicotómico, lógico, indicador, booleano)
+
+\setlength{\parindent}{0pt}\textbf{Ordinal:}\\
+Datos categóricos que tienen un ordenamiento explícito. (Sinónimo: factor ordenado)
+
+Los ingenieros de software y los programadores de bases de datos pueden preguntarse por qué necesitamos la noción de datos categóricos y ordinales para el análisis. Después de todo, las categorías son simplemente una colección de valores de texto (o numéricos), y la base de datos subyacente maneja automáticamente la representación interna. Sin embargo, la identificación explícita de los datos como categóricos, a diferencia del texto, ofrece algunas ventajas:\\
+• Saber que los datos son categóricos puede actuar como una señal que le dice al software cómo
+deben comportarse los procedimientos, como producir un gráfico o ajustar un modelo. En particular, los datos ordinales se pueden representar como un factor ordenado en R, conservando un orden especificado por el usuario en gráficos, tablas y modelos. En Python, scikit learn admite datos ordinales con sklearn.preprocessing.OrdinalEncoder.\\
+• El almacenamiento y la indexación se pueden optimizar (como en una base de datos relacional).\\
+• Los valores posibles que puede tomar una variable categórica determinada se imponen en el software (como una enumeración).\\
+ El tercer "beneficio" puede dar lugar a un comportamiento no deseado o inesperado: el comportamiento predeterminado de las funciones de importación de datos en R (por ejemplo, read.csv) es convertir automáticamente una columna de texto en un factor. Las operaciones subsiguientes en esa columna supondrán que los únicos valores permitidos para esa columna son los que se importaron originalmente, y la asignación de un nuevo valor de texto introducirá una advertencia y producirá un NA (valor faltante). El paquete pandas en Python no realizará dicha conversión automáticamente. Sin embargo, puede especificar una columna como categórica explícitamente en la función {read_csv}.\\
+\textbf{punto 2}\\
+2) Medidas de tendencia central y dispersión
+MEDIA: Media aritmética, es la que se obtiene sumando los datos y dividiéndolos por el número de
+ellos. Se aplica por ejemplo para resumir el número de pacientes promedio que se atiende en un
+turno. Otro ejemplo, es el número promedio de controles prenatales que tiene una gestante.
+Media Geométrica (MG): Es una medida de tendencia central que puede utilizarse para mostrar los
+cambios porcentuales en una serie de números positivos. Como tal, tiene una amplia aplicación en
+los negocios y en la economía, debido a que con frecuencia se está interesado en establecer el
+cambio porcentual en las ventas en el producto interno bruto o en cualquier serie económica. Se
+define como la raíz índice n del producto de n términos.
+
+\end{document}
