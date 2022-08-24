@@ -1,0 +1,44 @@
+###Código del punto 1 - Profe
+
+df <- gapminder%>%
+  
+  filter(country=='Panama' | country == 'Peru')%>%
+  
+  group_by(country) %>% summarise(mean_gdpPercap=mean(gdpPercap))
+
+
+
+df <- droplevels(df)
+
+barplot(df$mean_gdpPercap~df$country,xlab="País",ylab="PIB")
+
+library(gapminder)
+library(dplyr)
+
+
+##Código del punto 1 -Ejercicio del Quiz
+
+df <- gapminder%>%
+  
+  filter(continent=="Americas"|continent=="Europe"|continent=="Africa"|continent=="Asia"|continent=="Oceania")%>%
+  
+  group_by(continent) %>% summarise(mean_gdpPercap=mean(gdpPercap))
+
+
+
+df <- droplevels(df)
+
+barplot(df$mean_gdpPercap~df$continent,xlab="continentes",ylab="PIB")
+
+
+###Punto 2
+vp<-gapminder %>% 
+  filter(year >= 2000)
+vp
+
+mean(vp$lifeExp)
+mean(vp$pop)
+mean(vp$gdpPercap)
+sd(vp$lifeExp)
+sd(vp$gdpPercap)
+sd(vp$pop)
